@@ -1,50 +1,73 @@
-# Welcome to your Expo app 👋
+## Swimming
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<p>App for swimmers follow evolution and objectives personal</p>
 
-## Get started
+<h1 align="center">
+  <img alt="Swimmmer" title="#Swimmer" src="./app/assets/images/swimmer.jpeg" />
+</h1>
 
-1. Install dependencies
+## Summary
+
+<!--ts-->
+
+- [About](#swimming)
+- [Summary](#summary)
+- [Features](#features)
+- [Pre requirements](#pre-requirements)
+- [Installation](#installation)
+- [Autor](#autor)
+- [License](#license)
+<!--te-->
+
+<h4 align="center"> 
+	🚧  Swimming 🚀 Building...  🚧
+</h4>
+
+## Features
+
+- [ ] Insert your training
+- [ ] Update your training
+- [ ] Delete your training
+- [ ] Integration your training with Apple Watch
+- [ ] Notifications in your cellphone
+
+## Pre-requirements
+
+Before start this project, you need installed in your computer that tools:
+[Git](https://git-scm.com), good code editor how [VSCode](https://code.visualstudio.com/) and all the environment [React Native](https://reactnative.dev) with [Expo](https://expo.dev).
+
+## Installation
+
+1. Repositorie clone
 
    ```bash
-   npm install
+   git clone https://github.com/leandrovidal56/swimming.git
    ```
 
-2. Start the app
+2. Install dependencies
 
    ```bash
-    npx expo start
+    yarn install
    ```
 
-In the output, you'll find options to open the app in a
+3. Run project
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+    yarn expo start
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Autor
+<a href="https://blog.rocketseat.com.br/author/thiago/">
+ <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/48811222" width="100px;" alt=""/>
+ <br />
+ <sub><b>Leandro Vidal</b></sub></a></a>
 
-## Get a fresh project
 
-When you're ready, run:
+ 👋🏽 Talk to me!
 
-```bash
-npm run reset-project
-```
+ [![Linkedin Badge](https://img.shields.io/badge/-Leandro_Vidal-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leandrovidalsilva/)](https://www.linkedin.com/in/leandrovidalsilva/) 
+[![Gmail Badge](https://img.shields.io/badge/-leandrovidal56@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:leandrovidal56@gmail.com)](mailto:leandrovidal56@gmail.com)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## License
+This project is under the license [MIT](./LICENSE).
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
