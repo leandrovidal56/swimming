@@ -1,26 +1,17 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Home } from "~/screens/home";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Home } from "~/screens/home";
 import { Profile } from "~/screens/profile";
 
 export function Router() {
   const Stack = createNativeStackNavigator();
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#7bb4e3",
-        marginTop: -50,
-        marginBottom: -50,
-      }}
-    >
-      <NavigationContainer independent={true}>
+    <NavigationContainer independent={true}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
         <Stack.Navigator
-          initialRouteName="Profile"
+          initialRouteName="Home"
           screenOptions={{
             headerShown: false,
           }}
@@ -36,7 +27,7 @@ export function Router() {
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaView>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 }
