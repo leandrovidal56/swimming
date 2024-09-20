@@ -57,10 +57,10 @@ Before start this project, you need installed in your computer that tools:
    ```
 
 ## Autor
-<a href="https://blog.rocketseat.com.br/author/thiago/">
- <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/48811222" width="100px;" alt=""/>
+
+ <img src="https://avatars3.githubusercontent.com/u/48811222" width="100px" style="border-radius: 50px;" alt="Leandro Vidal" />
  <br />
- <sub><b>Leandro Vidal</b></sub></a></a>
+ <sub><b>Leandro Vidal</b></sub>
 
 
  👋🏽 Talk to me!

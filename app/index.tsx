@@ -1,7 +1,5 @@
-import "react-native-reanimated";
+import { Router } from "~/routes";
 
-import { Home } from "~/screens/home";
-
-export function Index() {
-  return <Home />;
+export default function Index() {
+  return <Router />;
 }
