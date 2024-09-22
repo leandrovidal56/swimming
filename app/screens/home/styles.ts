@@ -14,7 +14,7 @@ export const Header = styled.View`
   flex-direction: row;
   margin-bottom: 20px;
 `;
-export const Name = styled.Text`
+export const UserName = styled.Text`
   font-weight: bold;
   font-size: 28px;
 `;
@@ -24,4 +24,20 @@ export const IconBox = styled.View`
   align-items: center;
   justify-content: center;
   border-radius: 12px;
+`;
+
+export const Create = styled.TouchableOpacity`
+  width: "100%";
+  height: 50px;
+
+  background: #1ea1f3;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 20px;
+`;
+
+export const CreateText = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
 `;

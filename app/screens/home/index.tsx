@@ -1,4 +1,4 @@
-import { FlatList } from "react-native";
+import { Button, FlatList } from "react-native";
 import { useNavigation } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -20,15 +20,14 @@ export function Home({}) {
   return (
     <S.Container>
       <S.Header>
-        <S.Name>Leandro Vidal</S.Name>
+        <S.UserName>Leandro Vidal</S.UserName>
         <S.IconBox>
-          <Ionicons
-            name="notifications"
-            size={24}
-            onPress={() => console.log("future screen notification")}
-          />
+          <Ionicons name="notifications" size={24} onPress={() => {}} />
         </S.IconBox>
       </S.Header>
+      <S.Create onPress={() => navigation.navigate("CreateTrainer")}>
+        <S.CreateText>Create a new trainer</S.CreateText>
+      </S.Create>
       <FlatList
         data={swimmingData}
         keyExtractor={(item) => item.id}
