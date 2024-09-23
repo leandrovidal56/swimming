@@ -9,15 +9,15 @@ export type SwimmingDataType = {
   hearthRateMax: number;
 };
 
-export const swimmingData: SwimmingDataType[] = [
-  {
-    id: "1",
-    day: "Today",
-    distance: 1200,
-    calories: 400,
-    laps: 22,
-    time: 55,
-    hearthRateMin: 50,
-    hearthRateMax: 150,
-  },
-];
+export const swimmingData: SwimmingDataType[] = [];
+
+export const addNewSwimmingTraining = (data: SwimmingDataType) => {
+  swimmingData.push(data);
+};
+
+export const removeSwimmingTraining = (idRemove: string) => {
+  const index = swimmingData.findIndex((item) => item.id === idRemove);
+  if (index !== -1) {
+    swimmingData.splice(index, 1);
+  }
+};

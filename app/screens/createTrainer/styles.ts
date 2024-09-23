@@ -4,29 +4,35 @@ export const Container = styled.View`
   flex: 1;
   width: "100%";
   height: "100%";
-  background: #fff;
+  background: #ffffff;
   padding: 0 10px;
 `;
 
 export const Header = styled.View`
-  justify-content: space-between;
   height: 50px;
-  align-items: flex-end;
+  align-items: center;
   flex-direction: row;
   margin-bottom: 20px;
-`;
-
-export const UserName = styled.Text`
-  font-weight: bold;
-  font-size: 28px;
+  justify-content: center;
 `;
 
 export const IconBox = styled.View`
   width: 40px;
   height: 40px;
-  align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  position: absolute;
+  left: 10px;
+`;
+
+export const Content = styled.View`
+  flex: 1;
+  justify-content: space-around;
+`;
+
+export const Title = styled.Text`
+  font-weight: bold;
+  font-size: 28px;
+  color: black;
 `;
 
 export const Create = styled.TouchableOpacity`
