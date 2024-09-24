@@ -35,6 +35,7 @@ export const IndicatorRow = styled.View`
 export const IndicatorText = styled.Text`
   margin-top: 6px;
 `;
+
 export const IndicatorNumber = styled.Text`
   font-size: 22px;
 `;
@@ -42,6 +43,7 @@ export const IndicatorNumber = styled.Text`
 export const Indicator = styled.View`
   align-items: center;
 `;
+
 export const IndicatorView = styled.View`
   width: 80px;
   height: 80px;
@@ -50,6 +52,7 @@ export const IndicatorView = styled.View`
   align-items: center;
   justify-content: center;
 `;
+
 export const HeartRow = styled.View`
   flex-direction: row;
   margin-top: 10px;

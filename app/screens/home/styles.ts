@@ -44,3 +44,12 @@ export const CreateText = styled.Text`
   font-weight: bold;
   color: #ffffff;
 `;
+export const ContainerLoading = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LoadIndicator = styled.ActivityIndicator.attrs(({ theme }) => ({
+  color: "#1ea1f3",
+}))``;

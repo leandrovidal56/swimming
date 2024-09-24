@@ -1,7 +1,8 @@
 import { Controller, Control, FieldErrors } from "react-hook-form";
-import { SwimmingDataType } from "~/screens/home/utils/swimmingData";
+
 import * as S from "./styles";
 import { TextInputProps } from "react-native";
+import { SwimmingDataType } from "~/services/storage/swimmingData";
 
 type InformationInputProps = {
   control: Control<SwimmingDataType>;

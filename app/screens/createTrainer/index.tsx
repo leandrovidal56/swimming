@@ -3,15 +3,12 @@ import { useForm } from "react-hook-form";
 import uuid from "react-native-uuid";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-import {
-  addNewSwimmingTraining,
-  SwimmingDataType,
-} from "../home/utils/swimmingData";
-
 import { StackTypes } from "~/routes/stackTypes";
 import { InputInformation } from "./components/input";
 
 import * as S from "./styles";
+
+import { SwimmingDataType, addNewSwimmingTraining } from "~/services/storage";
 
 export function CreateTrainer({}) {
   const navigation = useNavigation<StackTypes>();
@@ -21,7 +18,7 @@ export function CreateTrainer({}) {
     formState: { errors },
   } = useForm<SwimmingDataType>();
 
-  const onSubmit = (data: SwimmingDataType) => {
+  const onSubmit = async (data: SwimmingDataType) => {
     const newTraining = {
       id: uuid.v4().toString(),
       day: data.day,
@@ -32,8 +29,8 @@ export function CreateTrainer({}) {
       hearthRateMin: data.hearthRateMin,
       hearthRateMax: data.hearthRateMax,
     };
-    console.log(newTraining);
-    addNewSwimmingTraining(newTraining);
+
+    await addNewSwimmingTraining(newTraining);
 
     navigation.navigate("Home");
   };
