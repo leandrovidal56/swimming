@@ -11,7 +11,7 @@ type InformationInputProps = {
   errors: FieldErrors<SwimmingDataType>;
 } & TextInputProps;
 
-export function InputInformation({
+export function Input({
   control,
   name,
   placeholder,

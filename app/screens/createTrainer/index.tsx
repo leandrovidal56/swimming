@@ -9,7 +9,7 @@ import {
 } from "../home/utils/swimmingData";
 
 import { StackTypes } from "~/routes/stackTypes";
-import { InputInformation } from "./components/input";
+import { Input } from "./components/input";
 
 import * as S from "./styles";
 
@@ -50,14 +50,14 @@ export function CreateTrainer({}) {
         <S.Title>Create your trainning</S.Title>
       </S.Header>
       <S.Content>
-        <InputInformation
+        <Input
           control={control}
           name="day"
           placeholder="Day"
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="distance"
           placeholder="Distance"
@@ -65,7 +65,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="calories"
           placeholder="Calories"
@@ -73,7 +73,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="laps"
           placeholder="Laps"
@@ -81,7 +81,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="time"
           placeholder="Time"
@@ -89,7 +89,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="hearthRateMin"
           placeholder="HeartMin"
@@ -97,7 +97,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="hearthRateMax"
           placeholder="HeartMax"
