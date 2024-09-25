@@ -11,7 +11,10 @@ export function Profile({}) {
   return (
     <S.Container>
       <S.Content>
-        <Button title="navegação" onPress={() => navigation.navigate("Home")} />
+        <Button
+          title="go to Home"
+          onPress={() => navigation.navigate("Home")}
+        />
       </S.Content>
     </S.Container>
   );
