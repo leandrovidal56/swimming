@@ -102,9 +102,9 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <S.Create onPress={handleSubmit(onSubmit)}>
-          <S.CreateText>Create</S.CreateText>
-        </S.Create>
+        <S.Button onPress={handleSubmit(onSubmit)}>
+          <S.Text>Create</S.Text>
+        </S.Button>
       </S.Content>
     </S.Container>
   );

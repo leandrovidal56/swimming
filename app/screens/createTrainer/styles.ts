@@ -35,7 +35,7 @@ export const Title = styled.Text`
   color: black;
 `;
 
-export const Create = styled.TouchableOpacity`
+export const Button = styled.TouchableOpacity`
   width: "100%";
   height: 50px;
   background: #1ea1f3;
@@ -45,7 +45,7 @@ export const Create = styled.TouchableOpacity`
   margin-bottom: 20px;
 `;
 
-export const CreateText = styled.Text`
+export const Text = styled.Text`
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
