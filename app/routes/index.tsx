@@ -1,8 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Home } from "~/screens/home";
-import { Profile } from "~/screens/profile";
+import { Home, CreateTrainer, Notifications, Profile } from "~/screens/index";
 
 export function Router() {
   const Stack = createNativeStackNavigator();
@@ -24,6 +23,16 @@ export function Router() {
           <Stack.Screen
             name="Profile"
             component={Profile}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="CreateTrainer"
+            component={CreateTrainer}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Notifications"
+            component={Notifications}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
