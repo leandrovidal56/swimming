@@ -62,6 +62,7 @@ export function SwimmingTrainner({
             {getDistanceUnit(300)}
             {/* //testando */}
             {/* //testando */}
+            {/* //testando */}
             {/* {distance.lenght > 3 ? "metros" : "Km"} */}
           </S.IndicatorText>
         </S.Indicator>
