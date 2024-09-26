@@ -65,6 +65,7 @@ export function SwimmingTrainner({
             {/* //testando */}
             {/* //testando */}
             {/* //testando */}
+            {/* //testando */}
             {/* {distance.lenght > 3 ? "metros" : "Km"} */}
           </S.IndicatorText>
         </S.Indicator>
