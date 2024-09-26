@@ -1,9 +1,11 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
 export type SwimmingDataType = {
   id: string;
-  day: string;
+  day?: string;
   distance: number;
+  craw: number;
+  backstroke: number;
+  breaststroke: number;
+  butterfly: number;
   calories: number;
   laps: number;
   time: number;

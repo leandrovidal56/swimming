@@ -9,6 +9,8 @@ import { InputInformation } from "./components/input";
 import * as S from "./styles";
 
 import { SwimmingDataType, addNewSwimmingTraining } from "~/services/storage";
+import { format } from "date-fns";
+import { useEffect } from "react";
 
 export function CreateTrainer({}) {
   const navigation = useNavigation<StackTypes>();
@@ -16,7 +18,8 @@ export function CreateTrainer({}) {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<SwimmingDataType>();
+    setValue,
+  } = useForm<SwimmingDataType>({});
 
   const onSubmit = async (data: SwimmingDataType) => {
     const newTraining = {
@@ -24,6 +27,10 @@ export function CreateTrainer({}) {
       day: data.day,
       distance: data.distance,
       calories: data.calories,
+      craw: data.craw,
+      backstroke: data.backstroke,
+      breaststroke: data.breaststroke,
+      butterfly: data.butterfly,
       laps: data.laps,
       time: data.time,
       hearthRateMin: data.hearthRateMin,
@@ -34,6 +41,11 @@ export function CreateTrainer({}) {
 
     navigation.navigate("Home");
   };
+
+  useEffect(() => {
+    const today = format(new Date(), "yyyy-MM-dd");
+    setValue("day", today);
+  }, [setValue]);
   return (
     <S.Container>
       <S.Header>
@@ -46,21 +58,64 @@ export function CreateTrainer({}) {
         </S.IconBox>
         <S.Title>Create your trainning</S.Title>
       </S.Header>
-      <S.Content>
+      <S.Content showsVerticalScrollIndicator={false}>
         <InputInformation
           control={control}
           name="day"
-          placeholder="Day"
+          placeholder="Select Day"
           errorMessage="This is required, Fill please."
           errors={errors}
+          maskType="date"
         />
         <InputInformation
           control={control}
           name="distance"
-          placeholder="Distance"
+          placeholder="Total distance"
           keyboardType="numeric"
           errorMessage="This is required, Fill please."
           errors={errors}
+          maskType="distance"
+          maxLength={8}
+        />
+        <InputInformation
+          control={control}
+          name="craw"
+          placeholder="Crawl distance"
+          keyboardType="numeric"
+          errorMessage="This is required, Fill please."
+          errors={errors}
+          maskType="distance"
+          maxLength={8}
+        />
+        <InputInformation
+          control={control}
+          name="backstroke"
+          placeholder="Backstroke distance"
+          keyboardType="numeric"
+          errorMessage="This is required, Fill please."
+          errors={errors}
+          maskType="distance"
+          maxLength={8}
+        />
+        <InputInformation
+          control={control}
+          name="breaststroke"
+          placeholder="Breaststroke distance"
+          keyboardType="numeric"
+          errorMessage="This is required, Fill please."
+          errors={errors}
+          maskType="distance"
+          maxLength={8}
+        />
+        <InputInformation
+          control={control}
+          name="butterfly"
+          placeholder="Butterfly distance"
+          keyboardType="numeric"
+          errorMessage="This is required, Fill please."
+          errors={errors}
+          maskType="distance"
+          maxLength={8}
         />
         <InputInformation
           control={control}
@@ -69,6 +124,7 @@ export function CreateTrainer({}) {
           keyboardType="numeric"
           errorMessage="This is required, Fill please."
           errors={errors}
+          maxLength={4}
         />
         <InputInformation
           control={control}
@@ -77,14 +133,17 @@ export function CreateTrainer({}) {
           keyboardType="numeric"
           errorMessage="This is required, Fill please."
           errors={errors}
+          maxLength={3}
         />
         <InputInformation
           control={control}
           name="time"
-          placeholder="Time"
+          placeholder="Hours and minutes"
           keyboardType="numeric"
           errorMessage="This is required, Fill please."
           errors={errors}
+          maskType="time"
+          maxLength={4}
         />
         <InputInformation
           control={control}
@@ -93,6 +152,7 @@ export function CreateTrainer({}) {
           keyboardType="numeric"
           errorMessage="This is required, Fill please."
           errors={errors}
+          maxLength={3}
         />
         <InputInformation
           control={control}
@@ -101,6 +161,7 @@ export function CreateTrainer({}) {
           keyboardType="numeric"
           errorMessage="This is required, Fill please."
           errors={errors}
+          maxLength={3}
         />
         <S.Create onPress={handleSubmit(onSubmit)}>
           <S.CreateText>Create</S.CreateText>

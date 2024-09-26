@@ -34,19 +34,21 @@ export const IndicatorRow = styled.View`
 
 export const IndicatorText = styled.Text`
   margin-top: 6px;
+  font-size: 10px;
 `;
 
 export const IndicatorNumber = styled.Text`
-  font-size: 22px;
+  font-size: 18px;
 `;
 
 export const Indicator = styled.View`
   align-items: center;
+  width: 70px;
 `;
 
 export const IndicatorView = styled.View`
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
   border-radius: 40px;
   background: #fff;
   align-items: center;

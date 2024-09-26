@@ -1,20 +1,42 @@
+import {
+  maskDistance,
+  maskTime,
+} from "~/screens/createTrainer/components/input";
 import * as S from "./styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { format } from "date-fns";
 
 type informations = {
   day: string;
   distance: number;
+  craw: number;
+  backstroke?: number;
+  breaststroke?: number;
+  butterfly?: number;
   calories: number;
   laps: number;
-  time: number;
+  time: string;
   hearthRateMin: number;
   hearthRateMax: number;
   onRemove?: () => void;
+};
+const getDistanceUnit = (value: number): string => {
+  const stringValue = value.toString();
+
+  if (stringValue.length === 3) {
+    return "metros"; // Retorna "metros" se tiver 3 dígitos
+  } else {
+    return "quilômetros"; // Retorna "quilômetros" se tiver 4 dígitos
+  }
 };
 
 export function SwimmingTrainner({
   day,
   distance,
+  craw,
+  backstroke,
+  breaststroke,
+  butterfly,
   calories,
   laps,
   time,
@@ -25,7 +47,7 @@ export function SwimmingTrainner({
   return (
     <S.SwimmingTrainner>
       <S.Header>
-        <S.Day>{day}</S.Day>
+        <S.Day>{format(day, "dd - MMMM")}</S.Day>
         <S.IconBox>
           <Ionicons name="trash" size={24} onPress={onRemove} />
         </S.IconBox>
@@ -36,6 +58,10 @@ export function SwimmingTrainner({
             <S.IndicatorNumber>{distance}</S.IndicatorNumber>
           </S.IndicatorView>
           <S.IndicatorText>Distance</S.IndicatorText>
+          <S.IndicatorText>
+            {getDistanceUnit(300)}
+            {/* {distance.lenght > 3 ? "metros" : "Km"} */}
+          </S.IndicatorText>
         </S.Indicator>
         <S.Indicator>
           <S.IndicatorView>
@@ -51,15 +77,11 @@ export function SwimmingTrainner({
         </S.Indicator>
         <S.Indicator>
           <S.IndicatorView>
-            <S.IndicatorNumber>{time}</S.IndicatorNumber>
+            <S.IndicatorNumber>{maskTime(time)}</S.IndicatorNumber>
           </S.IndicatorView>
           <S.IndicatorText>Time</S.IndicatorText>
         </S.Indicator>
       </S.IndicatorRow>
-      <S.HeartRow>
-        <S.HeartText>Hearth Rate Min: {hearthRateMin}</S.HeartText>
-        <S.HeartText>Hearth Rate Max: {hearthRateMax}</S.HeartText>
-      </S.HeartRow>
     </S.SwimmingTrainner>
   );
 }

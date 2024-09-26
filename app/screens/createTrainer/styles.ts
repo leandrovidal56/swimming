@@ -24,10 +24,7 @@ export const IconBox = styled.View`
   left: 10px;
 `;
 
-export const Content = styled.View`
-  flex: 1;
-  justify-content: space-around;
-`;
+export const Content = styled.ScrollView``;
 
 export const Title = styled.Text`
   font-weight: bold;
@@ -42,6 +39,7 @@ export const Create = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   border-radius: 12px;
+  margin-top: 20px;
   margin-bottom: 20px;
 `;
 

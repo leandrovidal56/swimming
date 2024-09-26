@@ -70,6 +70,10 @@ export function Home({}) {
             <SwimmingTrainner
               day={item.day}
               distance={item.distance}
+              craw={item.craw}
+              backstroke={item.backstroke}
+              breaststroke={item.breaststroke}
+              butterfly={item.butterfly}
               calories={item.calories}
               laps={item.laps}
               time={item.time}
