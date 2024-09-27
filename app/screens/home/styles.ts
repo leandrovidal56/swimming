@@ -16,12 +16,12 @@ export const Header = styled.View`
   margin-bottom: 20px;
 `;
 
-export const UserName = styled.Text`
+export const Title = styled.Text`
   font-weight: bold;
   font-size: 28px;
 `;
 
-export const IconBox = styled.View`
+export const Icon = styled.View`
   width: 40px;
   height: 40px;
   align-items: center;
@@ -29,7 +29,7 @@ export const IconBox = styled.View`
   border-radius: 12px;
 `;
 
-export const Create = styled.TouchableOpacity`
+export const Button = styled.TouchableOpacity`
   width: "100%";
   height: 50px;
   background: #1ea1f3;
@@ -39,17 +39,17 @@ export const Create = styled.TouchableOpacity`
   margin-bottom: 20px;
 `;
 
-export const CreateText = styled.Text`
+export const Text = styled.Text`
   font-size: 16px;
   font-weight: bold;
   color: #ffffff;
 `;
-export const ContainerLoading = styled.View`
+export const Loading = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
 `;
 
-export const LoadIndicator = styled.ActivityIndicator.attrs(({ theme }) => ({
+export const Spinner = styled.ActivityIndicator.attrs(({ theme }) => ({
   color: "#1ea1f3",
 }))``;

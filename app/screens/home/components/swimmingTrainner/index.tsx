@@ -1,5 +1,17 @@
-import * as S from "./styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import {
+  Card,
+  Header,
+  Day,
+  Icon,
+  Row,
+  Text,
+  Number,
+  Indicator,
+  Data,
+  HeartInformationsRow,
+  HeartText,
+} from "./styles";
 
 type informations = {
   day: string;
@@ -23,43 +35,43 @@ export function SwimmingTrainner({
   onRemove,
 }: informations) {
   return (
-    <S.SwimmingTrainner>
-      <S.Header>
-        <S.Day>{day}</S.Day>
-        <S.IconBox>
+    <Card>
+      <Header>
+        <Day>{day}</Day>
+        <Icon>
           <Ionicons name="trash" size={24} onPress={onRemove} />
-        </S.IconBox>
-      </S.Header>
-      <S.IndicatorRow>
-        <S.Indicator>
-          <S.IndicatorView>
-            <S.IndicatorNumber>{distance}</S.IndicatorNumber>
-          </S.IndicatorView>
-          <S.IndicatorText>Distance</S.IndicatorText>
-        </S.Indicator>
-        <S.Indicator>
-          <S.IndicatorView>
-            <S.IndicatorNumber>{calories}</S.IndicatorNumber>
-          </S.IndicatorView>
-          <S.IndicatorText>Calories</S.IndicatorText>
-        </S.Indicator>
-        <S.Indicator>
-          <S.IndicatorView>
-            <S.IndicatorNumber>{laps}</S.IndicatorNumber>
-          </S.IndicatorView>
-          <S.IndicatorText>Laps</S.IndicatorText>
-        </S.Indicator>
-        <S.Indicator>
-          <S.IndicatorView>
-            <S.IndicatorNumber>{time}</S.IndicatorNumber>
-          </S.IndicatorView>
-          <S.IndicatorText>Time</S.IndicatorText>
-        </S.Indicator>
-      </S.IndicatorRow>
-      <S.HeartRow>
-        <S.HeartText>Hearth Rate Min: {hearthRateMin}</S.HeartText>
-        <S.HeartText>Hearth Rate Max: {hearthRateMax}</S.HeartText>
-      </S.HeartRow>
-    </S.SwimmingTrainner>
+        </Icon>
+      </Header>
+      <Row>
+        <Indicator>
+          <Data>
+            <Number>{distance}</Number>
+          </Data>
+          <Text>Distance</Text>
+        </Indicator>
+        <Indicator>
+          <Data>
+            <Number>{calories}</Number>
+          </Data>
+          <Text>Calories</Text>
+        </Indicator>
+        <Indicator>
+          <Data>
+            <Number>{laps}</Number>
+          </Data>
+          <Text>Laps</Text>
+        </Indicator>
+        <Indicator>
+          <Data>
+            <Number>{time}</Number>
+          </Data>
+          <Text>Time</Text>
+        </Indicator>
+      </Row>
+      <HeartInformationsRow>
+        <HeartText>Hearth Rate Min: {hearthRateMin}</HeartText>
+        <HeartText>Hearth Rate Max: {hearthRateMax}</HeartText>
+      </HeartInformationsRow>
+    </Card>
   );
 }

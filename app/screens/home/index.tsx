@@ -2,7 +2,6 @@ import { FlatList } from "react-native";
 import { useFocusEffect, useNavigation } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-import * as S from "./styles";
 import { SwimmingTrainner } from "./components/swimmingTrainner";
 
 import { StackTypes } from "~/routes/stackTypes";
@@ -14,6 +13,17 @@ import {
   getSwimmingTraining,
   removeSwimmingTraining,
 } from "~/services/storage";
+
+import {
+  Container,
+  Header,
+  Title,
+  Icon,
+  Button,
+  Text,
+  Loading,
+  Spinner,
+} from "./styles";
 
 export function Home({}) {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,24 +54,24 @@ export function Home({}) {
   );
 
   return (
-    <S.Container>
-      <S.Header>
-        <S.UserName>Leandro Vidal</S.UserName>
-        <S.IconBox>
+    <Container>
+      <Header>
+        <Title>Leandro Vidal</Title>
+        <Icon>
           <Ionicons
             name="notifications"
             size={24}
             onPress={() => navigation.navigate("Notifications")}
           />
-        </S.IconBox>
-      </S.Header>
-      <S.Create onPress={() => navigation.navigate("CreateTrainer")}>
-        <S.CreateText>Create a new trainning</S.CreateText>
-      </S.Create>
+        </Icon>
+      </Header>
+      <Button onPress={() => navigation.navigate("CreateTrainer")}>
+        <Text>Create a new training</Text>
+      </Button>
       {isLoading ? (
-        <S.ContainerLoading>
-          <S.LoadIndicator />
-        </S.ContainerLoading>
+        <Loading>
+          <Spinner />
+        </Loading>
       ) : (
         <FlatList
           data={trainings}
@@ -80,6 +90,6 @@ export function Home({}) {
           )}
         />
       )}
-    </S.Container>
+    </Container>
   );
 }

@@ -4,9 +4,16 @@ import uuid from "react-native-uuid";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 import { StackTypes } from "~/routes/stackTypes";
-import { InputInformation } from "./components/input";
-
-import * as S from "./styles";
+import { Input } from "./components/input";
+import {
+  Container,
+  Header,
+  Icon,
+  Content,
+  Title,
+  Button,
+  Text,
+} from "./styles";
 
 import { SwimmingDataType, addNewSwimmingTraining } from "~/services/storage";
 
@@ -34,27 +41,28 @@ export function CreateTrainer({}) {
 
     navigation.navigate("Home");
   };
+
   return (
-    <S.Container>
-      <S.Header>
-        <S.IconBox>
+    <Container>
+      <Header>
+        <Icon>
           <Ionicons
             name="arrow-back"
             size={24}
             onPress={() => navigation.goBack()}
           />
-        </S.IconBox>
-        <S.Title>Create your trainning</S.Title>
-      </S.Header>
-      <S.Content>
-        <InputInformation
+        </Icon>
+        <Title>Create your training</Title>
+      </Header>
+      <Content>
+        <Input
           control={control}
           name="day"
           placeholder="Day"
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="distance"
           placeholder="Distance"
@@ -62,7 +70,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="calories"
           placeholder="Calories"
@@ -70,7 +78,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="laps"
           placeholder="Laps"
@@ -78,7 +86,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="time"
           placeholder="Time"
@@ -86,7 +94,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="hearthRateMin"
           placeholder="HeartMin"
@@ -94,7 +102,7 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <InputInformation
+        <Input
           control={control}
           name="hearthRateMax"
           placeholder="HeartMax"
@@ -102,10 +110,10 @@ export function CreateTrainer({}) {
           errorMessage="This is required, Fill please."
           errors={errors}
         />
-        <S.Button onPress={handleSubmit(onSubmit)}>
-          <S.Text>Create</S.Text>
-        </S.Button>
-      </S.Content>
-    </S.Container>
+        <Button onPress={handleSubmit(onSubmit)}>
+          <Text>Create</Text>
+        </Button>
+      </Content>
+    </Container>
   );
 }

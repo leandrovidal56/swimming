@@ -1,21 +1,21 @@
 import styled from "styled-components/native/";
 
-type InformationsProps = {
+type InputProps = {
   hasError?: boolean;
 };
 
-export const Information = styled.TextInput<InformationsProps>`
-  border: 1px solid;
+export const Container = styled.TextInput<InputProps>`
   height: 50px;
+  margin-top: 20px;
+  border: 1px solid;
+  border-color: ${(props) => (props.hasError ? "red" : "#1ea1f3")};
   border-radius: 12px;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
   color: #1ea1f3;
-  border-color: ${(props) => (props.hasError ? "red" : "#1ea1f3")};
 `;
 
-export const InformationErrorMessage = styled.Text`
+export const ErrorMessage = styled.Text`
   font-size: 14px;
   color: red;
 `;

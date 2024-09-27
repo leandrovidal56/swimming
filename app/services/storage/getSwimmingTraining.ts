@@ -3,7 +3,7 @@ import { SwimmingDataType } from "./swimmingData";
 
 export const getSwimmingTraining = async () => {
   try {
-    const storage = await AsyncStorage.getItem("trainnings");
+    const storage = await AsyncStorage.getItem("trainings");
     const swimmingData: SwimmingDataType[] = storage ? JSON.parse(storage) : [];
     return swimmingData;
   } catch (error) {

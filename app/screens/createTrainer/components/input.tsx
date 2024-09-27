@@ -1,10 +1,10 @@
 import { Controller, Control, FieldErrors } from "react-hook-form";
 
-import * as S from "./styles";
+import { Container, ErrorMessage } from "./styles";
 import { TextInputProps } from "react-native";
 import { SwimmingDataType } from "~/services/storage/swimmingData";
 
-type InformationInputProps = {
+type InputProps = {
   control: Control<SwimmingDataType>;
   name: keyof SwimmingDataType;
   placeholder?: string;
@@ -12,20 +12,20 @@ type InformationInputProps = {
   errors: FieldErrors<SwimmingDataType>;
 } & TextInputProps;
 
-export function InputInformation({
+export function Input({
   control,
   name,
   placeholder,
   errorMessage,
   errors,
   keyboardType = "default",
-}: InformationInputProps) {
+}: InputProps) {
   return (
     <>
       <Controller
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
-          <S.Information
+          <Container
             onBlur={onBlur}
             onChangeText={onChange}
             value={value?.toString() || ""}
@@ -38,9 +38,7 @@ export function InputInformation({
         name={name}
         rules={{ required: true }}
       />
-      {errors[name] && (
-        <S.InformationErrorMessage>{errorMessage}</S.InformationErrorMessage>
-      )}
+      {errors[name] && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </>
   );
 }

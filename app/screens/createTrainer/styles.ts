@@ -4,24 +4,24 @@ export const Container = styled.View`
   flex: 1;
   width: "100%";
   height: "100%";
-  background: #ffffff;
   padding: 0 10px;
+  background: #ffffff;
 `;
 
 export const Header = styled.View`
   height: 50px;
-  align-items: center;
-  flex-direction: row;
   margin-bottom: 20px;
+  align-items: center;
   justify-content: center;
+  flex-direction: row;
 `;
 
-export const IconBox = styled.View`
+export const Icon = styled.View`
+  position: absolute;
   width: 40px;
   height: 40px;
-  justify-content: center;
-  position: absolute;
   left: 10px;
+  justify-content: center;
 `;
 
 export const Content = styled.View`
@@ -38,11 +38,11 @@ export const Title = styled.Text`
 export const Button = styled.TouchableOpacity`
   width: "100%";
   height: 50px;
-  background: #1ea1f3;
+  margin-bottom: 20px;
+  border-radius: 12px;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  margin-bottom: 20px;
+  background: #1ea1f3;
 `;
 
 export const Text = styled.Text`

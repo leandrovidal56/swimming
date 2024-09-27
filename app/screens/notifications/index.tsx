@@ -1,26 +1,26 @@
 import { useNavigation } from "expo-router";
 
-import * as S from "./styles";
-
 import { StackTypes } from "~/routes/stackTypes";
 import Ionicons from "@expo/vector-icons/Ionicons";
+
+import { Container, Content, Header, Icon, Title } from "./styles";
 
 export function Notifications({}) {
   const navigation = useNavigation<StackTypes>();
 
   return (
-    <S.Container>
-      <S.Header>
-        <S.IconBox>
+    <Container>
+      <Header>
+        <Icon>
           <Ionicons
             name="arrow-back"
             size={24}
             onPress={() => navigation.goBack()}
           />
-        </S.IconBox>
-        <S.Title>Notifications</S.Title>
-      </S.Header>
-      <S.Content></S.Content>
-    </S.Container>
+        </Icon>
+        <Title>Notifications</Title>
+      </Header>
+      <Content></Content>
+    </Container>
   );
 }

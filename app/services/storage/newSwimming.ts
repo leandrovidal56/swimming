@@ -6,7 +6,7 @@ export const addNewSwimmingTraining = async (payload: SwimmingDataType) => {
   try {
     const storageTrainings = await getSwimmingTraining();
     const storage = JSON.stringify([...storageTrainings, payload]);
-    await AsyncStorage.setItem("trainnings", storage);
+    await AsyncStorage.setItem("trainings", storage);
   } catch (error) {
     console.log(error, "Error saving");
   }

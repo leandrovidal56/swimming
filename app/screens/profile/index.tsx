@@ -1,21 +1,20 @@
 import { Button } from "react-native";
 import { useNavigation } from "expo-router";
 
-import * as S from "./styles";
-
 import { StackTypes } from "~/routes/stackTypes";
+import { Container, Content } from "./styles";
 
 export function Profile({}) {
   const navigation = useNavigation<StackTypes>();
 
   return (
-    <S.Container>
-      <S.Content>
+    <Container>
+      <Content>
         <Button
           title="go to Home"
           onPress={() => navigation.navigate("Home")}
         />
-      </S.Content>
-    </S.Container>
+      </Content>
+    </Container>
   );
 }
