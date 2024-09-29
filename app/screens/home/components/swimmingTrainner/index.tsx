@@ -1,5 +1,14 @@
-import * as S from "./styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import {
+  Card,
+  Header,
+  Icon,
+  Row,
+  Indicator,
+  Data,
+  HeartInformationsRow,
+} from "./styles";
+import { Text } from "~/components/text";
 
 type informations = {
   day: string;
@@ -23,43 +32,67 @@ export function SwimmingTrainner({
   onRemove,
 }: informations) {
   return (
-    <S.SwimmingTrainner>
-      <S.Header>
-        <S.Day>{day}</S.Day>
-        <S.IconBox>
+    <Card>
+      <Header>
+        <Text size="5-5" color="black" message={day} />
+        <Icon>
           <Ionicons name="trash" size={24} onPress={onRemove} />
-        </S.IconBox>
-      </S.Header>
-      <S.IndicatorRow>
-        <S.Indicator>
-          <S.IndicatorView>
-            <S.IndicatorNumber>{distance}</S.IndicatorNumber>
-          </S.IndicatorView>
-          <S.IndicatorText>Distance</S.IndicatorText>
-        </S.Indicator>
-        <S.Indicator>
-          <S.IndicatorView>
-            <S.IndicatorNumber>{calories}</S.IndicatorNumber>
-          </S.IndicatorView>
-          <S.IndicatorText>Calories</S.IndicatorText>
-        </S.Indicator>
-        <S.Indicator>
-          <S.IndicatorView>
-            <S.IndicatorNumber>{laps}</S.IndicatorNumber>
-          </S.IndicatorView>
-          <S.IndicatorText>Laps</S.IndicatorText>
-        </S.Indicator>
-        <S.Indicator>
-          <S.IndicatorView>
-            <S.IndicatorNumber>{time}</S.IndicatorNumber>
-          </S.IndicatorView>
-          <S.IndicatorText>Time</S.IndicatorText>
-        </S.Indicator>
-      </S.IndicatorRow>
-      <S.HeartRow>
-        <S.HeartText>Hearth Rate Min: {hearthRateMin}</S.HeartText>
-        <S.HeartText>Hearth Rate Max: {hearthRateMax}</S.HeartText>
-      </S.HeartRow>
-    </S.SwimmingTrainner>
+        </Icon>
+      </Header>
+      <Row>
+        <Indicator>
+          <Data>
+            <Text size="5-5" color="black" message={`${distance}`} />
+          </Data>
+          <Text
+            size="3"
+            color="black"
+            fontWeight={"normal"}
+            message={"Distance"}
+          />
+        </Indicator>
+        <Indicator>
+          <Data>
+            <Text size="5-5" color="black" message={`${calories}`} />
+          </Data>
+          <Text
+            size="3"
+            color="black"
+            fontWeight={"normal"}
+            message={"Calories"}
+          />
+        </Indicator>
+        <Indicator>
+          <Data>
+            <Text size="5-5" color="black" message={`${laps}`} />
+          </Data>
+          <Text size="3" color="black" fontWeight={"normal"} message={"Laps"} />
+        </Indicator>
+        <Indicator>
+          <Data>
+            <Text size="5-5" color="black" message={`${time}`} />
+          </Data>
+          <Text size="3" color="black" fontWeight={"normal"} message={"Time"} />
+        </Indicator>
+      </Row>
+      <HeartInformationsRow>
+        <Text
+          size="3"
+          color="black"
+          fontWeight={"normal"}
+          message={`
+            Hearth Rate Min: ${hearthRateMin}
+          `}
+        />
+        <Text
+          size="3"
+          color="black"
+          fontWeight={"normal"}
+          message={`
+            Hearth Rate Max: ${hearthRateMax}
+          `}
+        />
+      </HeartInformationsRow>
+    </Card>
   );
 }

@@ -4,24 +4,24 @@ export const Container = styled.View`
   flex: 1;
   width: "100%";
   height: "100%";
-  background: #ffffff;
   padding: 0 10px;
+  background: ${({ theme }) => theme.colors.white};
 `;
 
 export const Header = styled.View`
   height: 50px;
+  margin-bottom: ${({ theme }) => theme.spaces.lg};
   align-items: center;
-  flex-direction: row;
-  margin-bottom: 20px;
   justify-content: center;
+  flex-direction: row;
 `;
 
-export const IconBox = styled.View`
+export const Icon = styled.View`
+  position: absolute;
   width: 40px;
   height: 40px;
-  justify-content: center;
-  position: absolute;
   left: 10px;
+  justify-content: center;
 `;
 
 export const Content = styled.View`
@@ -29,24 +29,12 @@ export const Content = styled.View`
   justify-content: space-around;
 `;
 
-export const Title = styled.Text`
-  font-weight: bold;
-  font-size: 28px;
-  color: black;
-`;
-
-export const Create = styled.TouchableOpacity`
+export const Button = styled.TouchableOpacity`
   width: "100%";
   height: 50px;
-  background: #1ea1f3;
+  margin-bottom: ${({ theme }) => theme.spaces.lg};
+  border-radius: ${({ theme }) => theme.radius[3]};
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  margin-bottom: 20px;
-`;
-
-export const CreateText = styled.Text`
-  font-size: 16px;
-  font-weight: bold;
-  color: #ffffff;
+  background: ${({ theme }) => theme.colors.primary.default};
 `;
