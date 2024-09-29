@@ -7,6 +7,7 @@ import { StackTypes } from "~/routes/stackTypes";
 import { Input } from "./components/input";
 import { Container, Header, Icon, Content, Button } from "./styles";
 
+
 import { SwimmingDataType, addNewSwimmingTraining } from "~/services/storage";
 import { Text } from "~/components/text";
 
@@ -63,6 +64,7 @@ export function CreateTrainer({}) {
         />
       </Header>
       <Content>
+
         <Input
           control={control}
           name="day"
