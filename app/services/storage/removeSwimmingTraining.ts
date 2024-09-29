@@ -1,5 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { SwimmingDataType } from "./swimmingData";
+import { Alert } from "react-native";
 
 export const removeSwimmingTraining = async (id: string) => {
   try {
@@ -16,6 +17,7 @@ export const removeSwimmingTraining = async (id: string) => {
 
       const jsonValue = JSON.stringify(trainingArray);
       await AsyncStorage.setItem("trainings", jsonValue);
+      Alert.alert("Removed", "Training was deleted ");
     }
   } catch (error) {
     console.log(error, "Error removing training");

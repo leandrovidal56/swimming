@@ -5,12 +5,12 @@ export const Container = styled.View`
   width: "100%";
   height: "100%";
   padding: 0 10px;
-  background: #ffffff;
+  background: ${({ theme }) => theme.colors.white};
 `;
 
 export const Header = styled.View`
   height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: ${({ theme }) => theme.spaces.lg};
   align-items: center;
   justify-content: center;
   flex-direction: row;
@@ -31,22 +31,22 @@ export const Content = styled.View`
 
 export const Title = styled.Text`
   font-weight: bold;
-  font-size: 28px;
-  color: black;
+  font-size: ${({ theme }) => theme.sizes[7]};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Button = styled.TouchableOpacity`
   width: "100%";
   height: 50px;
-  margin-bottom: 20px;
-  border-radius: 12px;
+  margin-bottom: ${({ theme }) => theme.spaces.lg};
+  border-radius: ${({ theme }) => theme.radius[3]};
   align-items: center;
   justify-content: center;
-  background: #1ea1f3;
+  background: ${({ theme }) => theme.colors.primary.default};
 `;
 
 export const Text = styled.Text`
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.sizes[4]};
   font-weight: bold;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
 `;

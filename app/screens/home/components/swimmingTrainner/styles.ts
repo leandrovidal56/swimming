@@ -1,11 +1,11 @@
 import styled from "styled-components/native/";
 
 export const Card = styled.View`
-  background: #1ea1f3;
+  background: ${({ theme }) => theme.colors.primary.default};
   height: 200px;
-  border-radius: 12px;
-  padding: 10px;
-  margin-bottom: 10px;
+  border-radius: ${({ theme }) => theme.sizes[3]};
+  padding: ${({ theme }) => theme.spaces.md};
+  margin-bottom: ${({ theme }) => theme.spaces.md};
 `;
 
 export const Header = styled.View`
@@ -15,7 +15,7 @@ export const Header = styled.View`
 `;
 
 export const Day = styled.Text`
-  font-size: 22px;
+  font-size: ${({ theme }) => theme.sizes[5 - 5]};
 `;
 
 export const Icon = styled.View`
@@ -23,21 +23,21 @@ export const Icon = styled.View`
   height: 40px;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: ${({ theme }) => theme.radius[3]};
 `;
 
 export const Row = styled.View`
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 10px;
+  margin-top: ${({ theme }) => theme.spaces.md};
 `;
 
 export const Text = styled.Text`
-  margin-top: 6px;
+  margin-top: ${({ theme }) => theme.spaces.sm};
 `;
 
 export const Number = styled.Text`
-  font-size: 22px;
+  font-size: ${({ theme }) => theme.sizes[5 - 5]};
 `;
 
 export const Indicator = styled.View`
@@ -48,14 +48,14 @@ export const Data = styled.View`
   width: 80px;
   height: 80px;
   border-radius: 40px;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.white};
   align-items: center;
   justify-content: center;
 `;
 
 export const HeartInformationsRow = styled.View`
   flex-direction: row;
-  margin-top: 10px;
+  margin-top: ${({ theme }) => theme.spaces.md};
   justify-content: space-between;
 `;
 

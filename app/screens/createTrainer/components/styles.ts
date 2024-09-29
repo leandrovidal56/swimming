@@ -6,16 +6,16 @@ type InputProps = {
 
 export const Container = styled.TextInput<InputProps>`
   height: 50px;
-  margin-top: 20px;
+  margin-top: ${({ theme }) => theme.spaces.lg};
   border: 1px solid;
   border-color: ${(props) => (props.hasError ? "red" : "#1ea1f3")};
-  border-radius: 12px;
+  border-radius: ${({ theme }) => theme.radius[3]};
   align-items: center;
   text-align: center;
   color: #1ea1f3;
 `;
 
 export const ErrorMessage = styled.Text`
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.sizes[3 - 5]};
   color: red;
 `;
