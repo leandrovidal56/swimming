@@ -1,8 +1,9 @@
 import { Controller, Control, FieldErrors } from "react-hook-form";
 
-import { Container, ErrorMessage } from "./styles";
+import { Container } from "./styles";
 import { TextInputProps } from "react-native";
 import { SwimmingDataType } from "~/services/storage/swimmingData";
+import { Text } from "~/components/text";
 
 type InputProps = {
   control: Control<SwimmingDataType>;
@@ -38,7 +39,7 @@ export function Input({
         name={name}
         rules={{ required: true }}
       />
-      {errors[name] && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      {errors[name] && <Text hasError size="3-5" message={errorMessage} />}
     </>
   );
 }

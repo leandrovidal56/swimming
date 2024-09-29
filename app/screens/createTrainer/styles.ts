@@ -29,12 +29,6 @@ export const Content = styled.View`
   justify-content: space-around;
 `;
 
-export const Title = styled.Text`
-  font-weight: bold;
-  font-size: ${({ theme }) => theme.sizes[7]};
-  color: ${({ theme }) => theme.colors.black};
-`;
-
 export const Button = styled.TouchableOpacity`
   width: "100%";
   height: 50px;
@@ -43,10 +37,4 @@ export const Button = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.colors.primary.default};
-`;
-
-export const Text = styled.Text`
-  font-size: ${({ theme }) => theme.sizes[4]};
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.white};
 `;

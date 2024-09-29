@@ -3,7 +3,8 @@ import { useNavigation } from "expo-router";
 import { StackTypes } from "~/routes/stackTypes";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-import { Container, Content, Header, Icon, Title } from "./styles";
+import { Container, Content, Header, Icon } from "./styles";
+import { Text } from "~/components/text";
 
 export function Notifications({}) {
   const navigation = useNavigation<StackTypes>();
@@ -18,7 +19,7 @@ export function Notifications({}) {
             onPress={() => navigation.goBack()}
           />
         </Icon>
-        <Title>Notifications</Title>
+        <Text color="black" size="7" message="Notifications" />
       </Header>
       <Content></Content>
     </Container>

@@ -5,17 +5,10 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 import { StackTypes } from "~/routes/stackTypes";
 import { Input } from "./components/input";
-import {
-  Container,
-  Header,
-  Icon,
-  Content,
-  Title,
-  Button,
-  Text,
-} from "./styles";
+import { Container, Header, Icon, Content, Button } from "./styles";
 
 import { SwimmingDataType, addNewSwimmingTraining } from "~/services/storage";
+import { Text } from "~/components/text";
 
 export function CreateTrainer({}) {
   const navigation = useNavigation<StackTypes>();
@@ -26,15 +19,25 @@ export function CreateTrainer({}) {
   } = useForm<SwimmingDataType>();
 
   const onSubmit = async (data: SwimmingDataType) => {
+    const {
+      day,
+      distance,
+      calories,
+      laps,
+      time,
+      hearthRateMin,
+      hearthRateMax,
+    } = data;
+
     const newTraining = {
       id: uuid.v4().toString(),
-      day: data.day,
-      distance: data.distance,
-      calories: data.calories,
-      laps: data.laps,
-      time: data.time,
-      hearthRateMin: data.hearthRateMin,
-      hearthRateMax: data.hearthRateMax,
+      day,
+      distance,
+      calories,
+      laps,
+      time,
+      hearthRateMin,
+      hearthRateMax,
     };
 
     await addNewSwimmingTraining(newTraining);
@@ -52,7 +55,12 @@ export function CreateTrainer({}) {
             onPress={() => navigation.goBack()}
           />
         </Icon>
-        <Title>Create your training</Title>
+        <Text
+          size="7"
+          style={{ textAlign: "center" }}
+          color="black"
+          message="Create your training"
+        />
       </Header>
       <Content>
         <Input
@@ -111,7 +119,7 @@ export function CreateTrainer({}) {
           errors={errors}
         />
         <Button onPress={handleSubmit(onSubmit)}>
-          <Text>Create</Text>
+          <Text color="white" size="4" message="Create" />
         </Button>
       </Content>
     </Container>

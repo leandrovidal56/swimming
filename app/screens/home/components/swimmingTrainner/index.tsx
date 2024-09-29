@@ -2,16 +2,13 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   Card,
   Header,
-  Day,
   Icon,
   Row,
-  Text,
-  Number,
   Indicator,
   Data,
   HeartInformationsRow,
-  HeartText,
 } from "./styles";
+import { Text } from "~/components/text";
 
 type informations = {
   day: string;
@@ -37,7 +34,7 @@ export function SwimmingTrainner({
   return (
     <Card>
       <Header>
-        <Day>{day}</Day>
+        <Text size="5-5" color="black" message={day} />
         <Icon>
           <Ionicons name="trash" size={24} onPress={onRemove} />
         </Icon>
@@ -45,32 +42,56 @@ export function SwimmingTrainner({
       <Row>
         <Indicator>
           <Data>
-            <Number>{distance}</Number>
+            <Text size="5-5" color="black" message={`${distance}`} />
           </Data>
-          <Text>Distance</Text>
+          <Text
+            size="3"
+            color="black"
+            fontWeight={"normal"}
+            message={"Distance"}
+          />
         </Indicator>
         <Indicator>
           <Data>
-            <Number>{calories}</Number>
+            <Text size="5-5" color="black" message={`${calories}`} />
           </Data>
-          <Text>Calories</Text>
+          <Text
+            size="3"
+            color="black"
+            fontWeight={"normal"}
+            message={"Calories"}
+          />
         </Indicator>
         <Indicator>
           <Data>
-            <Number>{laps}</Number>
+            <Text size="5-5" color="black" message={`${laps}`} />
           </Data>
-          <Text>Laps</Text>
+          <Text size="3" color="black" fontWeight={"normal"} message={"Laps"} />
         </Indicator>
         <Indicator>
           <Data>
-            <Number>{time}</Number>
+            <Text size="5-5" color="black" message={`${time}`} />
           </Data>
-          <Text>Time</Text>
+          <Text size="3" color="black" fontWeight={"normal"} message={"Time"} />
         </Indicator>
       </Row>
       <HeartInformationsRow>
-        <HeartText>Hearth Rate Min: {hearthRateMin}</HeartText>
-        <HeartText>Hearth Rate Max: {hearthRateMax}</HeartText>
+        <Text
+          size="3"
+          color="black"
+          fontWeight={"normal"}
+          message={`
+            Hearth Rate Min: ${hearthRateMin}
+          `}
+        />
+        <Text
+          size="3"
+          color="black"
+          fontWeight={"normal"}
+          message={`
+            Hearth Rate Max: ${hearthRateMax}
+          `}
+        />
       </HeartInformationsRow>
     </Card>
   );

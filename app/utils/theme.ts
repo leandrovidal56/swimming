@@ -7,6 +7,7 @@ export const theme = {
     white: "#ffffff",
     black: "black",
     purple: "#7159c1",
+    red: "#c30010",
   },
   spaces: {
     px: "1px",

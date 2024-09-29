@@ -14,10 +14,6 @@ export const Header = styled.View`
   align-items: center;
 `;
 
-export const Day = styled.Text`
-  font-size: ${({ theme }) => theme.sizes[5 - 5]};
-`;
-
 export const Icon = styled.View`
   width: 40px;
   height: 40px;
@@ -32,14 +28,6 @@ export const Row = styled.View`
   margin-top: ${({ theme }) => theme.spaces.md};
 `;
 
-export const Text = styled.Text`
-  margin-top: ${({ theme }) => theme.spaces.sm};
-`;
-
-export const Number = styled.Text`
-  font-size: ${({ theme }) => theme.sizes[5 - 5]};
-`;
-
 export const Indicator = styled.View`
   align-items: center;
 `;
@@ -51,6 +39,7 @@ export const Data = styled.View`
   background: ${({ theme }) => theme.colors.white};
   align-items: center;
   justify-content: center;
+  margin-top: ${({ theme }) => theme.spaces.sm};
 `;
 
 export const HeartInformationsRow = styled.View`
@@ -58,5 +47,3 @@ export const HeartInformationsRow = styled.View`
   margin-top: ${({ theme }) => theme.spaces.md};
   justify-content: space-between;
 `;
-
-export const HeartText = styled.Text``;

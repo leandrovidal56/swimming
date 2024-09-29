@@ -14,8 +14,3 @@ export const Container = styled.TextInput<InputProps>`
   text-align: center;
   color: #1ea1f3;
 `;
-
-export const ErrorMessage = styled.Text`
-  font-size: ${({ theme }) => theme.sizes[3 - 5]};
-  color: red;
-`;

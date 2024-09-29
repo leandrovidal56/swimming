@@ -29,9 +29,3 @@ export const Icon = styled.View`
   left: 20px;
   justify-content: center;
 `;
-
-export const Title = styled.Text`
-  font-size: ${({ theme }) => theme.sizes[7]};
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.black};
-`;

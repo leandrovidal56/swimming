@@ -14,16 +14,9 @@ import {
   removeSwimmingTraining,
 } from "~/services/storage";
 
-import {
-  Container,
-  Header,
-  Title,
-  Icon,
-  Button,
-  Text,
-  Loading,
-  Spinner,
-} from "./styles";
+import { Container, Header, Icon, Button } from "./styles";
+import { Loading } from "~/components/loading";
+import { Text } from "~/components/text";
 
 export function Home({}) {
   const [isLoading, setIsLoading] = useState(true);
@@ -56,7 +49,7 @@ export function Home({}) {
   return (
     <Container>
       <Header>
-        <Title>Leandro Vidal</Title>
+        <Text color="black" size="7" message="Leandro Vidal" />
         <Icon>
           <Ionicons
             name="notifications"
@@ -66,12 +59,10 @@ export function Home({}) {
         </Icon>
       </Header>
       <Button onPress={() => navigation.navigate("CreateTrainer")}>
-        <Text>Create a new training</Text>
+        <Text color="white" size="4" message="Create a new training" />
       </Button>
       {isLoading ? (
-        <Loading>
-          <Spinner />
-        </Loading>
+        <Loading message="Loading..." />
       ) : (
         <FlatList
           data={trainings}
