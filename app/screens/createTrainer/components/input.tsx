@@ -4,6 +4,7 @@ import { Container } from "./styles";
 import { TextInputProps } from "react-native";
 import { SwimmingDataType } from "~/services/storage/swimmingData";
 import { Text } from "~/components/text";
+import { theme } from "~/utils/theme";
 
 type InputProps = {
   control: Control<SwimmingDataType>;
@@ -31,7 +32,7 @@ export function Input({
             onChangeText={onChange}
             value={value?.toString() || ""}
             placeholder={placeholder}
-            placeholderTextColor="#1ea1f3"
+            placeholderTextColor={theme.colors.white}
             hasError={!!errors[name]}
             keyboardType={keyboardType}
           />

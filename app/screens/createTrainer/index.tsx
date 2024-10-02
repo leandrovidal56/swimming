@@ -5,11 +5,11 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 import { StackTypes } from "~/routes/stackTypes";
 import { Input } from "./components/input";
-import { Container, Header, Icon, Content, Button } from "./styles";
-
+import { Container, Content, Button } from "./styles";
 
 import { SwimmingDataType, addNewSwimmingTraining } from "~/services/storage";
 import { Text } from "~/components/text";
+import { theme } from "~/utils/theme";
 
 export function CreateTrainer({}) {
   const navigation = useNavigation<StackTypes>();
@@ -48,23 +48,7 @@ export function CreateTrainer({}) {
 
   return (
     <Container>
-      <Header>
-        <Icon>
-          <Ionicons
-            name="arrow-back"
-            size={24}
-            onPress={() => navigation.goBack()}
-          />
-        </Icon>
-        <Text
-          size="7"
-          style={{ textAlign: "center" }}
-          color="black"
-          message="Create your training"
-        />
-      </Header>
       <Content>
-
         <Input
           control={control}
           name="day"

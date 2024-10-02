@@ -5,23 +5,7 @@ export const Container = styled.View`
   width: "100%";
   height: "100%";
   padding: 0 10px;
-  background: ${({ theme }) => theme.colors.white};
-`;
-
-export const Header = styled.View`
-  height: 50px;
-  margin-bottom: ${({ theme }) => theme.spaces.lg};
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-`;
-
-export const Icon = styled.View`
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  left: 10px;
-  justify-content: center;
+  background: ${({ theme }) => theme.colors.black};
 `;
 
 export const Content = styled.View`
