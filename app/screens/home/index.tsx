@@ -1,6 +1,5 @@
 import { FlatList } from "react-native";
 import { useFocusEffect, useNavigation } from "expo-router";
-import Ionicons from "@expo/vector-icons/Ionicons";
 
 import { SwimmingTrainner } from "./components/swimmingTrainner";
 
@@ -14,7 +13,7 @@ import {
   removeSwimmingTraining,
 } from "~/services/storage";
 
-import { Container, Header, Icon, Button } from "./styles";
+import { Container, Button } from "./styles";
 import { Loading } from "~/components/loading";
 import { Text } from "~/components/text";
 
@@ -48,16 +47,6 @@ export function Home({}) {
 
   return (
     <Container>
-      <Header>
-        <Text color="black" size="7" message="Leandro Vidal" />
-        <Icon>
-          <Ionicons
-            name="notifications"
-            size={24}
-            onPress={() => navigation.navigate("Notifications")}
-          />
-        </Icon>
-      </Header>
       <Button onPress={() => navigation.navigate("CreateTrainer")}>
         <Text color="white" size="4" message="Create a new training" />
       </Button>

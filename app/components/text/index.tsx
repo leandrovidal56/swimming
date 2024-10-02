@@ -1,4 +1,4 @@
-import { TextProps } from "react-native";
+import { TextStyle } from "react-native";
 import { Text as StyledText } from "./styles";
 import { theme } from "~/utils/theme";
 
@@ -8,7 +8,7 @@ type CustomTextProps = {
   color?: keyof typeof theme.colors;
   hasError?: boolean;
   fontWeight?: "normal" | "bold" | number;
-} & TextProps;
+} & TextStyle;
 
 export function Text({
   message,
