@@ -5,9 +5,12 @@ export const theme = {
       "700": "#7bb4e3",
     },
     white: "#ffffff",
+    lightGray: "#cecece",
+
     black: "#000000",
     purple: "#7159c1",
     lightPurple: "#AA90E5",
+    darkPurple: "#5900ff",
     red: "#c30010",
     redText: "#F11854",
     yellow: "#F6F038",
