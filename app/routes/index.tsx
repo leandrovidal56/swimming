@@ -14,8 +14,9 @@ export function Router() {
         initialRouteName="Home"
         screenOptions={({ navigation }) => ({
           headerShown: true,
+          headerShadowVisible: true,
           headerStyle: {
-            backgroundColor: theme.colors.black,
+            backgroundColor: theme.colors.lightBlue,
           },
           headerTintColor: theme.colors.white,
           headerLeft: () => (
@@ -34,7 +35,10 @@ export function Router() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ headerShown: true, headerTitle: "" }}
+          options={{
+            headerShown: true,
+            headerTitle: "",
+          }}
         />
         <Stack.Screen
           name="Profile"

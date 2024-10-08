@@ -5,20 +5,18 @@ export const Container = styled.View`
   width: "100%";
   height: "100%";
   padding: 0 10px;
-  background: ${({ theme }) => theme.colors.black};
+  background: ${({ theme }) => theme.colors.white};
 `;
 
-export const Content = styled.View`
-  flex: 1;
-  justify-content: space-around;
-`;
+export const Content = styled.ScrollView``;
 
 export const Button = styled.TouchableOpacity`
   width: "100%";
   height: 50px;
+  margin-top: ${({ theme }) => theme.spaces.lg};
   margin-bottom: ${({ theme }) => theme.spaces.lg};
   border-radius: ${({ theme }) => theme.radius[3]};
   align-items: center;
   justify-content: center;
-  background: ${({ theme }) => theme.colors.primary.default};
+  background: ${({ theme }) => theme.colors.lightBlue};
 `;
