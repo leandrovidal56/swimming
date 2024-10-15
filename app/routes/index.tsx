@@ -5,6 +5,7 @@ import { Text } from "~/components/text";
 import { Home, CreateTrainer, Notifications, Profile } from "~/screens/index";
 import { theme } from "~/utils/theme";
 import { TouchableOpacity } from "react-native";
+import { EditTrainer } from "~/screens/editTrainer";
 
 export function Router() {
   const Stack = createNativeStackNavigator();
@@ -60,6 +61,17 @@ export function Router() {
           options={{
             headerShown: true,
             headerTitle: "Create Your Training",
+            headerTitleStyle: { fontSize: 28, fontWeight: "bold" },
+            headerLeft: () => null,
+            headerRight: () => null,
+          }}
+        />
+        <Stack.Screen
+          name="EditTrainer"
+          component={EditTrainer}
+          options={{
+            headerShown: true,
+            headerTitle: "Edit Your Training",
             headerTitleStyle: { fontSize: 28, fontWeight: "bold" },
             headerLeft: () => null,
             headerRight: () => null,

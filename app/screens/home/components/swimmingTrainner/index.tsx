@@ -1,4 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
+import Feather from "@expo/vector-icons/Feather";
 import {
   Card,
   Header,
@@ -26,6 +27,7 @@ type informations = {
   hearthRateMin: number;
   hearthRateMax: number;
   onRemove?: () => void;
+  onEdit?: () => void;
 };
 
 export function SwimmingTrainner({
@@ -37,10 +39,19 @@ export function SwimmingTrainner({
   hearthRateMin,
   hearthRateMax,
   onRemove,
+  onEdit,
 }: informations) {
   return (
     <Card>
       <Header>
+        <Icon>
+          <Feather
+            name="edit"
+            color={theme.colors.white}
+            size={24}
+            onPress={onEdit}
+          />
+        </Icon>
         <Indicator>
           <Text size="5-5" color="white" message={FormatDate(day)} />
         </Indicator>
