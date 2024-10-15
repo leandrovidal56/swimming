@@ -1,17 +1,20 @@
-import { useNavigation } from "expo-router";
+import { RouteParams, useNavigation } from "expo-router";
 import { useForm } from "react-hook-form";
-import uuid from "react-native-uuid";
 
 import { StackTypes } from "~/routes/stackTypes";
 import { Input } from "./components/input";
 import { Container, Content, Button } from "./styles";
 
-import { SwimmingDataType, addNewSwimmingTraining } from "~/services/storage";
+import {
+  SwimmingDataType,
+  editSwimmingTraining,
+  filterSwimmingTraining,
+} from "~/services/storage";
 import { Text } from "~/components/text";
-import { format } from "date-fns";
+
 import { useEffect } from "react";
 
-export function CreateTrainer({}) {
+export function EditTrainer({ route }) {
   const navigation = useNavigation<StackTypes>();
   const {
     handleSubmit,
@@ -19,6 +22,18 @@ export function CreateTrainer({}) {
     formState: { errors },
     setValue,
   } = useForm<SwimmingDataType>({});
+  const { id } = route.params;
+
+  const fillForm = async (id: string) => {
+    const data = await filterSwimmingTraining(id);
+    setValue("day", data!.day);
+    setValue("distance", data!.distance);
+    setValue("calories", data!.calories);
+    setValue("laps", data!.laps);
+    setValue("time", data!.time);
+    setValue("hearthRateMin", data!.hearthRateMin);
+    setValue("hearthRateMax", data!.hearthRateMax);
+  };
 
   const onSubmit = async (data: SwimmingDataType) => {
     const {
@@ -31,8 +46,8 @@ export function CreateTrainer({}) {
       hearthRateMax,
     } = data;
 
-    const newTraining = {
-      id: uuid.v4().toString(),
+    const updatedTraining = {
+      id: id,
       day: day,
       distance: distance,
       calories: calories,
@@ -41,16 +56,14 @@ export function CreateTrainer({}) {
       hearthRateMin: hearthRateMin,
       hearthRateMax: hearthRateMax,
     };
-
-    await addNewSwimmingTraining(newTraining);
+    await editSwimmingTraining(updatedTraining);
 
     navigation.navigate("Home");
   };
 
   useEffect(() => {
-    const today = format(new Date(), "yyyy-MM-dd");
-    setValue("day", today);
-  }, [setValue]);
+    fillForm(id);
+  }, []);
 
   return (
     <Container>
@@ -128,7 +141,7 @@ export function CreateTrainer({}) {
         />
 
         <Button onPress={handleSubmit(onSubmit)}>
-          <Text color="white" size="4" message="Create" />
+          <Text color="white" size="4" message="Edit" />
         </Button>
       </Content>
     </Container>
