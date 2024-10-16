@@ -4,6 +4,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Text } from "~/components/text";
 import { Home, CreateTrainer, Notifications, Profile } from "~/screens/index";
 import { theme } from "~/utils/theme";
+import { TouchableOpacity } from "react-native";
+import { EditTrainer } from "~/screens/editTrainer";
 
 export function Router() {
   const Stack = createNativeStackNavigator();
@@ -14,12 +16,15 @@ export function Router() {
         initialRouteName="Home"
         screenOptions={({ navigation }) => ({
           headerShown: true,
+          headerShadowVisible: true,
           headerStyle: {
-            backgroundColor: theme.colors.black,
+            backgroundColor: theme.colors.lightBlue,
           },
           headerTintColor: theme.colors.white,
           headerLeft: () => (
-            <Text color="white" size="7" message="Leandro Vidal" />
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+              <Text color="white" size="7" message="Leandro Vidal" />
+            </TouchableOpacity>
           ),
           headerRight: () => (
             <Ionicons
@@ -34,12 +39,21 @@ export function Router() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ headerShown: true, headerTitle: "" }}
+          options={{
+            headerShown: true,
+            headerTitle: "",
+          }}
         />
         <Stack.Screen
           name="Profile"
           component={Profile}
-          options={{ headerShown: true }}
+          options={{
+            headerShown: true,
+            headerTitle: "Profile",
+            headerTitleStyle: { fontSize: 28, fontWeight: "bold" },
+            headerLeft: () => null,
+            headerRight: () => null,
+          }}
         />
         <Stack.Screen
           name="CreateTrainer"
@@ -47,6 +61,17 @@ export function Router() {
           options={{
             headerShown: true,
             headerTitle: "Create Your Training",
+            headerTitleStyle: { fontSize: 28, fontWeight: "bold" },
+            headerLeft: () => null,
+            headerRight: () => null,
+          }}
+        />
+        <Stack.Screen
+          name="EditTrainer"
+          component={EditTrainer}
+          options={{
+            headerShown: true,
+            headerTitle: "Edit Your Training",
             headerTitleStyle: { fontSize: 28, fontWeight: "bold" },
             headerLeft: () => null,
             headerRight: () => null,

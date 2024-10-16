@@ -9,7 +9,7 @@ import { useCallback, useState } from "react";
 
 import {
   SwimmingDataType,
-  getSwimmingTraining,
+  getAllSwimmingTraining,
   removeSwimmingTraining,
 } from "~/services/storage";
 
@@ -25,7 +25,7 @@ export function Home({}) {
   async function fetchTrainings() {
     try {
       setIsLoading(true);
-      const data = await getSwimmingTraining();
+      const data = await getAllSwimmingTraining();
       setTrainings(data);
     } catch (error) {
       console.log(error);
@@ -36,6 +36,11 @@ export function Home({}) {
 
   async function deleteTraining(id: string) {
     await removeSwimmingTraining(id);
+    fetchTrainings();
+  }
+  async function editTraining(id: string) {
+    console.log(id);
+    navigation.navigate("EditTrainer", { id });
     fetchTrainings();
   }
 
@@ -66,6 +71,7 @@ export function Home({}) {
               hearthRateMin={item.hearthRateMin}
               hearthRateMax={item.hearthRateMax}
               onRemove={() => deleteTraining(item.id)}
+              onEdit={() => editTraining(item.id)}
             />
           )}
         />
