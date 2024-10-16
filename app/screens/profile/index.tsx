@@ -18,9 +18,35 @@ import {
   maskDistance,
   maskTime,
 } from "../createTrainer/components/utils/masks";
+import { getAllSwimmingTraining } from "~/services/storage";
+import { useEffect, useState } from "react";
 
 export function Profile({}) {
   const navigation = useNavigation<StackTypes>();
+  const [distance, setDistance] = useState("");
+  const [time, setTime] = useState("");
+  const [sessions, setSessions] = useState("");
+
+  const fillIndicators = async () => {
+    const data = await getAllSwimmingTraining();
+
+    setSessions(data.length.toString());
+    const distance = data.reduce(
+      (accumulator, currentValue) =>
+        accumulator + Number(currentValue.distance),
+      0
+    );
+    setDistance(distance.toString());
+    const totalTime = data.reduce(
+      (accumulator, currentValue) => accumulator + Number(currentValue.time),
+      0
+    );
+    setTime(totalTime.toString());
+  };
+
+  useEffect(() => {
+    fillIndicators();
+  }, []);
 
   return (
     <Container>
@@ -42,7 +68,12 @@ export function Profile({}) {
               fontWeight={400}
               message="Sessions"
             />
-            <Text marginTop={10} color="white" size="4" message="200" />
+            <Text
+              marginTop={10}
+              color="white"
+              size="4"
+              message={sessions.toString()}
+            />
           </Metrics>
           <Metrics>
             <Text
@@ -56,7 +87,7 @@ export function Profile({}) {
               marginTop={10}
               color="white"
               size="4"
-              message={maskDistance("40000")}
+              message={maskDistance(distance)}
             />
           </Metrics>
           <Metrics>
@@ -71,7 +102,7 @@ export function Profile({}) {
               marginTop={10}
               color="white"
               size="4"
-              message={maskTime("200000")}
+              message={maskTime(time)}
             />
           </Metrics>
         </Row>

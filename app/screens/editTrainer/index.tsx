@@ -1,4 +1,4 @@
-import { RouteParams, useNavigation } from "expo-router";
+import { useNavigation } from "expo-router";
 import { useForm } from "react-hook-form";
 
 import { StackTypes } from "~/routes/stackTypes";

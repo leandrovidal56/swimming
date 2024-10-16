@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { SwimmingDataType } from "./swimmingData";
-import { getAllSwimmingTraining } from "./";
+import { getAllSwimmingTraining } from "./getAllSwimmingTraining";
 
 export const addNewSwimmingTraining = async (payload: SwimmingDataType) => {
   try {
